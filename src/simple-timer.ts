@@ -29,14 +29,29 @@ export class SimpleTimer {
 	getSubscription(): string[] {
 		return Object.keys(this.subscription);
 	}
-	newTimer(name: string, sec: number): void {
-		if (this.timer[name] === undefined) {
-			let o = Observable.timer(0, sec * 1000);
-			this.timer[name] = {
-				's': sec,
-				'o': o
-			};
+	newTimer(name: string, sec: number): boolean {
+		if (name === undefined || this.timer[name]) {
+			return false;
 		}
+		let o = Observable.timer(0, sec * 1000);
+		this.timer[name] = { 's': sec, 'o': o };
+		return true;
+	}
+	delTimer(name: string): boolean {
+		if (name === undefined) {
+			return false;
+		}
+		let s = this.getSubscription();
+		// unsubscribe all subscription for queue 'name'
+		s.forEach(i => {
+			if (this.subscription[i].name === name) {
+				this.unsubscribe(i);
+			}
+		});
+		// delete queue 'name' subject and observable
+		delete this.timer[name].o;
+		delete this.timer[name].s;
+		delete this.timer[name];
 	}
 	subscribe(name: string, sec: number, callback: (any) => void, lazy = true): string {
 		if (lazy) {
