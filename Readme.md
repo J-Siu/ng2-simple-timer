@@ -2,6 +2,8 @@
 
 A simple timer service for Angular 2, base on RxJS.
 
+Name/ID(string) base API. RxJS object not exposed.
+
 ## Index
 <!-- TOC -->
 
@@ -9,7 +11,8 @@ A simple timer service for Angular 2, base on RxJS.
 - [Usage](#usage)
 	- [Import into Angular 2 application (typescript)](#import-into-angular-2-application-typescript)
 	- [API](#api)
-		- [newTimer](#newtimername-string-sec-number-void)
+		- [newTimer](#newtimername-string-sec-number-boolean)
+		- [delTimer](#deltimername-string-boolean)
 		- [getTimer](#gettimer-string)
 		- [getSubscription](#getsubscription-string)
 		- [subscribe](#subscribename-string-sec-number-callback-any-void-lazy-true-string)
@@ -56,13 +59,25 @@ constructor(private st: SimpleTimer) { }
 
 ### API
 
-##### newTimer(name: string, sec: number): void
+##### newTimer(name: string, sec: number): boolean
 
-newTimer will create timer `name` and tick every 'number' of seconds. Creating timer with the same name multiple times has no side effect.
+`newTimer` will create timer `name` and tick every 'number' of seconds. Creating timer with the same name multiple times has no side effect.
+
+Return `false` if timer `name` exist.
+
 ```javascript
 this.st.newTimer('5sec', 5);
 ```
 
+##### delTimer(name: string): boolean
+
+`delTimer` will delete timer `name`
+
+Return `false` if timer `name` does not exist.
+
+```javascript
+this.st.delTimer('5sec');
+```
 
 ##### getTimer(): string[]
 
@@ -80,13 +95,13 @@ let ids: string[] = this.st.getSubscription();
 ```
 
 
-##### subscribe(name: string, sec: number, callback: (any) => void, lazy = true): string
+##### subscribe(name: string, callback: (any) => void): string
 
-`subscribe` will link `callback` function to timer `name`. Whenever timer `name` tick, `callback` will be invoked. `subscibe` is usually setup in `ngOnInit()`. 
+`subscribe` will link `callback` function to timer `name`. Whenever timer `name` tick, `callback` will be invoked. 
 
-If `lazy = true`(default), timer `name` will be created automatically if not exist yet.
+Return subscription id(string).
 
-If `lazy = false`, and timer `name` does not exist, `subscribe` will return empty string.
+Return empty string if timer `name` does not exist.
 
 Either use Lambda(fat arrow) in typescript to pass in callback or bind `this` to another variable in javascript, else `this` scope will be lost.
 
@@ -132,6 +147,12 @@ this.st.unsubscribe(this.timerId);
 ## Changelog
 
 * 0.2.0
+* 0.2.1
+	- API change
+		- newTimer() return boolean
+		- subscribe() - lazy mode removed
+	- API new
+		- delTimer() 
 
 ## License
 
