@@ -147,7 +147,7 @@ this.st.unsubscribe(this.timerId);
 ## Changelog
 
 * 0.2.0
-* 0.2.1
+* 0.2.2
 	- API change
 		- newTimer() return boolean
 		- subscribe() - lazy mode removed
