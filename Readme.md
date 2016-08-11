@@ -15,7 +15,7 @@ Name/ID(string) base API. RxJS object not exposed.
 		- [delTimer](#deltimername-string-boolean)
 		- [getTimer](#gettimer-string)
 		- [getSubscription](#getsubscription-string)
-		- [subscribe](#subscribename-string-sec-number-callback-any-void-lazy-true-string)
+		- [subscribe](#subscribename-string-callback-any-void-string)
 		- [unsubscribe](#unsubscribeid-string-boolean)
 - [Example](#example)
 - [Contributors](#contributors)
