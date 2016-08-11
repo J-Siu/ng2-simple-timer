@@ -3,8 +3,8 @@ import { Observable, Subscription } from 'rxjs/Rx';
 
 interface TimerList {
 	[name: string]: {
-		s: number,
-		o: Observable<any>
+		second: number,
+		observable: Observable<any>
 	};
 }
 
@@ -30,15 +30,15 @@ export class SimpleTimer {
 		return Object.keys(this.subscription);
 	}
 	newTimer(name: string, sec: number): boolean {
-		if (name === undefined || this.timer[name]) {
+		if (name === undefined || sec === undefined || this.timer[name]) {
 			return false;
 		}
 		let o = Observable.timer(0, sec * 1000);
-		this.timer[name] = { 's': sec, 'o': o };
+		this.timer[name] = { second: sec, observable: o };
 		return true;
 	}
 	delTimer(name: string): boolean {
-		if (name === undefined) {
+		if (name === undefined || !this.timer[name]) {
 			return false;
 		}
 		let s = this.getSubscription();
@@ -49,20 +49,17 @@ export class SimpleTimer {
 			}
 		});
 		// delete queue 'name' subject and observable
-		delete this.timer[name].o;
-		delete this.timer[name].s;
+		delete this.timer[name].observable;
 		delete this.timer[name];
 	}
-	subscribe(name: string, sec: number, callback: (any) => void, lazy = true): string {
-		if (lazy) {
-			this.newTimer(name, sec);
-		} else if (!this.timer[name]) {
+	subscribe(name: string, callback: (any) => void): string {
+		if (!this.timer[name]) {
 			return '';
 		}
 		let id = name + '-' + this.uuid.v1();
 		this.subscription[id] = {
 			name: name,
-			subscription: this.timer[name]['o'].subscribe(callback)
+			subscription: this.timer[name].observable.subscribe(callback)
 		}
 		return id;
 	}
