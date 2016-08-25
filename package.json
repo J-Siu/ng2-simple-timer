@@ -1,34 +1,31 @@
 {
-  "name": "ng2-simple-timer",
-  "description": "Angular 2 simple timer service",
-  "version": "0.2.2",
-  "license": "MIT",
-  "author": {
-    "name": "John, Sing Dao, Siu",
-    "email": "js@johnsiu.com",
-    "url": "https://johnsiu.com/"
-  },
-  "bugs": {
-    "url": "https://github.com/J-Siu/ng2-simple-timer/issues"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/J-Siu/ng2-simple-timer.git"
-  },
-  "scripts": {
-    "build": "rm -rf lib && tsc -p src"
-  },
-  "dependencies": {
-    "node-uuid": "*"
-  },
-  "peerDependencies": {
-    "@angular/core": "2.0.0-rc.4",
-    "rxjs": "5.0.0-beta.6",
-    "zone.js": "^0.6.6"
-  },
-  "devDependencies": {
-    "@angular/core": "2.0.0-rc.4",
-    "rxjs": "5.0.0-beta.6",
-    "zone.js": "^0.6.6"
-  }
+	"name": "ng2-simple-timer",
+	"description": "Angular 2 simple timer service",
+	"version": "0.2.2",
+	"license": "MIT",
+	"author": {
+		"name": "John, Sing Dao, Siu",
+		"email": "js@johnsiu.com",
+		"url": "https://johnsiu.com/"
+	},
+	"bugs": {
+		"url": "https://github.com/J-Siu/ng2-simple-timer/issues"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/J-Siu/ng2-simple-timer.git"
+	},
+	"scripts": {
+		"build": "rm -rf lib && tsc -p src"
+	},
+	"dependencies": {
+		"@angular/common": "^2.0.0-rc.5",
+		"@angular/compiler": "^2.0.0-rc.5",
+		"@angular/core": "^2.0.0-rc.5",
+		"@angular/platform-browser": "^2.0.0-rc.5",
+		"rxjs": "5.0.0-beta.6",
+		"zone.js": "^0.6.6",
+		"reflect-metadata": "^0.1.3",
+		"node-uuid": "*"
+	}
 }

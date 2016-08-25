@@ -1,6 +1,6 @@
 {
 	"globalDependencies": {
-		"core-js": "registry:dt/core-js",
+		"es6-shim": "registry:dt/es6-shim",
 		"node": "registry:dt/node"
 	}
 }
