@@ -155,7 +155,9 @@ this.st.unsubscribe(this.timerId);
 	- API new
 		- delTimer() 
 * 0.2.3
-	- Update to Angular 2 RC5
+	- Support Angular 2 RC5
+* 0.2.4
+	- Remove module, export `SimpleTimer` only
 
 ## License
 
