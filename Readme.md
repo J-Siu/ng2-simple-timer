@@ -5,26 +5,21 @@ A simple timer service for Angular 2, base on RxJS.
 Name/ID(string) base API. RxJS object not exposed.
 
 ## Index
-<!-- TOC -->
 
-- [ng2-simple-timer](#ng2-simple-timer)
-	- [Index](#index)
-	- [Install](#install)
-	- [Usage](#usage)
-		- [Import into Angular 2 RC5 application (typescript)](#import-into-angular-2-rc5-application-typescript)
-		- [API](#api)
-				- [newTimer(name: string, sec: number): boolean](#newtimername-string-sec-number-boolean)
-				- [delTimer(name: string): boolean](#deltimername-string-boolean)
-				- [getTimer(): string[]](#gettimer-string)
-				- [getSubscription(): string[]](#getsubscription-string)
-				- [subscribe(name: string, callback: (any) => void): string](#subscribename-string-callback-any-void-string)
-				- [unsubscribe(id: string): boolean](#unsubscribeid-string-boolean)
-	- [Example](#example)
-	- [Contributors](#contributors)
-	- [Changelog](#changelog)
-	- [License](#license)
-
-<!-- /TOC -->
+- [Install](#install)
+- [Usage](#usage)
+	- [Import into Angular 2 RC5 application (typescript)](#import-into-angular-2-rc5-application-typescript)
+	- [API](#api)
+		- [newTimer](#newtimername-string-sec-number-boolean)
+		- [delTimer](#deltimername-string-boolean)
+		- [getTimer](#gettimer-string)
+		- [getSubscription](#getsubscription-string)
+		- [subscribe](#subscribename-string-callback-any-void-string)
+		- [unsubscribe](#unsubscribeid-string-boolean)
+- [Example](#example)
+- [Contributors](#contributors)
+- [Changelog](#changelog)
+- [License](#license)
 
 ## Install
 
@@ -36,19 +31,17 @@ npm install ng2-simple-timer
 
 ### Import into Angular 2 RC5 application (typescript)
 
-ng2-simple-timer is implemented as Angular 2 injectable service name __SimpleTimer__.
+`ng2-simple-timer` is implemented as Angular 2 injectable service name __SimpleTimer__.
 
 __For module using SimpleTimer__
 
-Import `SimpleTimerModule` into your __root__ module (eg. [app.module.ts](https://github.com/J-Siu/ng2-simple-timer-example/blob/master/app/app.module.ts)).
+Add `SimpleTimer` into module providers (eg. [app.module.ts](https://github.com/J-Siu/ng2-simple-timer-example/blob/master/app/app.module.ts)).
 
 ```javascript
-import { SimpleTimerModule } from 'ng2-simple-timer';
+import { SimpleTimer } from 'ng2-simple-timer';
 
 @NgModule({
-	imports: [
-		SimpleTimerModule.forRoot() // remember to use .forRoot()
-	]
+	providers: [SimpleTimer]
 })
 ```
 
