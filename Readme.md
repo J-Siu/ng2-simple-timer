@@ -97,7 +97,7 @@ let ids: string[] = this.st.getSubscription();
 
 ##### subscribe(name: string, callback: (any) => void): string
 
-`subscribe` will link `callback` function to timer `name`. Whenever timer `name` tick, `callback` will be invoked. 
+`subscribe` will link `callback` function to timer `name`. Whenever timer `name` tick, `callback` will be invoked.
 
 Return subscription id(string).
 
@@ -153,11 +153,14 @@ this.st.unsubscribe(this.timerId);
 		- newTimer() return boolean
 		- subscribe() - lazy mode removed
 	- API new
-		- delTimer() 
+		- delTimer()
 * 0.2.3
 	- Support Angular 2 RC5
 * 0.2.4
 	- Remove module, export `SimpleTimer` only
+* 1.2.4
+	- Support Angular 2.0.0
+	- Clean up package
 
 ## License
 

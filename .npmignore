@@ -1,7 +1,10 @@
+.DS_Store
+.git
+.gitignore
 examples
 node_modules
-src
-.gitignore
-.git
-.DS_Store
 npm-debug.log
+src
+tsconfig.json
+typings
+typings.json
