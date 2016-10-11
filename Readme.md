@@ -59,7 +59,9 @@ export class ChildComponent {
 
 ### API
 
-##### newTimer(name: string, sec: number): boolean
+##### newTimer
+
+`newTimer(name: string, sec: number): boolean`
 
 `newTimer` will create timer `name` and tick every 'number' of seconds. Creating timer with the same name multiple times has no side effect.
 
@@ -69,7 +71,9 @@ Return `false` if timer `name` exist.
 this.st.newTimer('5sec', 5);
 ```
 
-##### delTimer(name: string): boolean
+##### delTimer
+
+`delTimer(name: string): boolean`
 
 `delTimer` will delete timer `name`
 
@@ -79,23 +83,27 @@ Return `false` if timer `name` does not exist.
 this.st.delTimer('5sec');
 ```
 
-##### getTimer(): string[]
+##### getTimer
+
+`getTimer(): string[]`
 
 `getTimer` will return all timer name in string array.
 ```javascript
 let t: string[] = this.st.getTimer();
 ```
 
+##### getSubscription
 
-##### getSubscription(): string[]
+`getSubscription(): string[]`
 
 `getSubscription` will return all subscription id in string array.
 ```javascript
 let ids: string[] = this.st.getSubscription();
 ```
 
+##### subscribe
 
-##### subscribe(name: string, callback: (any) => void): string
+`subscribe(name: string, callback: (any) => void): string`
 
 `subscribe` will link `callback` function to timer `name`. Whenever timer `name` tick, `callback` will be invoked.
 
@@ -120,8 +128,9 @@ callback() {
 }
 ```
 
+##### unsubscribe
 
-##### unsubscribe(id: string): boolean
+`unsubscribe(id: string): boolean`
 
 `unsubscribe` will cancel subscription using `id`.
 
@@ -133,15 +142,14 @@ timerId: string;
 this.st.unsubscribe(this.timerId);
 ```
 
-
 ## Example
 
-[ng2-simple-timer-example](https://github.com/J-Siu/ng2-simple-timer-example)
-
+GitHub: [ng2-simple-timer-example](https://github.com/J-Siu/ng2-simple-timer-example)
+Plunker: [Angular2 Simple Timer Example](http://embed.plnkr.co/HaTd8q/)
 
 ## Contributors
 
-* John Sing Dao Siu (<john.sd.siu@gmail.com>)
+* [John Sing Dao Siu](https://github.com/J-Siu)
 
 
 ## Changelog
@@ -161,6 +169,8 @@ this.st.unsubscribe(this.timerId);
 * 1.2.4
 	- Support Angular 2.0.0
 	- Clean up package
+* 1.2.5
+	- Add Plunker example
 
 ## License
 
@@ -168,22 +178,8 @@ The MIT License
 
 Copyright (c) 2016
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
-The above copyright notice and this permission notice shall be included in
-all copies or substantial portions of the Software.
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-THE SOFTWARE.
-
-
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
