@@ -1,7 +1,7 @@
 {
   "name": "ng2-simple-timer",
   "description": "Angular 2 simple timer service",
-  "version": "1.2.4",
+  "version": "1.2.5",
   "license": "MIT",
   "author": {
     "name": "John, Sing Dao, Siu",
