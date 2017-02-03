@@ -171,6 +171,9 @@ Plunker: [Angular2 Simple Timer Example](http://embed.plnkr.co/HaTd8q/)
 	- Clean up package
 * 1.2.5
 	- Add Plunker example
+* 1.2.6
+	- Support Angular 2.4.*
+	- Replace node-uuid with uuid
 
 ## License
 

@@ -18,7 +18,7 @@ interface SubscriptionList {
 @Injectable()
 export class SimpleTimer {
 
-	uuid = require('node-uuid');
+	uuid = require('uuid');
 
 	private timer: TimerList = {};
 	private subscription: SubscriptionList = {};

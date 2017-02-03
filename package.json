@@ -26,19 +26,21 @@
     "url": "git+https://github.com/J-Siu/ng2-simple-timer.git"
   },
   "scripts": {
-    "build": "rm -rf lib && tsc",
-    "typings": "typings install"
+    "build": "tsc -p src/"
   },
   "peerDependencies": {
-    "@angular/core": "^2.0.0",
-    "rxjs": "5.0.0-beta.12",
-    "zone.js": "^0.6.6"
+    "@angular/core": "~2.4.0",
+    "rxjs": "5.0.1",
+    "zone.js": "^0.7.4",
+    "uuid": "*"
   },
   "devDependencies": {
-    "@angular/core": "^2.0.0",
-    "rxjs": "5.0.0-beta.12",
-    "zone.js": "^0.6.6",
-    "typescript": "*",
-    "typings": "*"
+    "@angular/core": "^2.4.0",
+    "rxjs": "5.0.1",
+    "zone.js": "^0.7.4",
+    "typings": "*",
+    "uuid": "*",
+    "@types/node": "^6.0.46",
+    "typescript": "~2.0.10"
   }
 }
