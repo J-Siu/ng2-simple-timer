@@ -29,7 +29,7 @@
     "build": "tsc -p src/"
   },
   "dependencies": {
-    "uuid": "*"
+    "angular2-uuid": "*"
   },
   "peerDependencies": {
     "@angular/core": "~2.4.0",
@@ -37,11 +37,10 @@
     "zone.js": "^0.7.4"
   },
   "devDependencies": {
-    "@angular/core": "^2.4.0",
+    "@angular/core": "~2.4.0",
     "rxjs": "5.0.1",
     "zone.js": "^0.7.4",
-    "typings": "*",
-    "uuid": "*",
+    "angular2-uuid": "*",
     "@types/node": "^6.0.46",
     "typescript": "~2.0.10"
   }

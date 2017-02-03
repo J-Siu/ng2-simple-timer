@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable, Subscription } from 'rxjs/Rx';
+import { UUID } from 'angular2-uuid';
 
 interface TimerList {
 	[name: string]: {
@@ -17,8 +18,6 @@ interface SubscriptionList {
 
 @Injectable()
 export class SimpleTimer {
-
-	uuid = require('uuid');
 
 	private timer: TimerList = {};
 	private subscription: SubscriptionList = {};
@@ -56,7 +55,7 @@ export class SimpleTimer {
 		if (!this.timer[name]) {
 			return '';
 		}
-		let id = name + '-' + this.uuid.v1();
+		let id = name + '-' + UUID.UUID();
 		this.subscription[id] = {
 			name: name,
 			subscription: this.timer[name].observable.subscribe(callback)
