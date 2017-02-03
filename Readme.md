@@ -174,6 +174,8 @@ Plunker: [Angular2 Simple Timer Example](http://embed.plnkr.co/HaTd8q/)
 * 1.2.7
 	- Support Angular 2.4.*
 	- Replace node-uuid with uuid
+* 1.2.8
+	- Change uuid as dependency
 
 ## License
 
