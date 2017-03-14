@@ -8,6 +8,7 @@ Name/ID(string) base API. RxJS object not exposed.
 
 - [Install](#install)
 - [Usage](#usage)
+	- ["noImplicitAny": false](#noimplicitany-false)
 	- [Import into Angular 2 RC5 application (typescript)](#import-into-angular-2-rc5-application-typescript)
 	- [API](#api)
 		- [newTimer](#newtimername-string-sec-number-boolean)
@@ -29,7 +30,13 @@ npm install ng2-simple-timer
 
 ## Usage
 
-### Import into Angular 2 RC5 application (typescript)
+### "noImplicitAny": false
+
+Must set `"noImplicitAny": false` in application __tsconfig.json__. Else following error may occure at build time:
+
+    error TS7006: Parameter 'any' implicitly has an 'any' type
+
+### Import into Angular2 RC5+ application (typescript)
 
 `ng2-simple-timer` is implemented as Angular 2 injectable service name __SimpleTimer__.
 
@@ -178,6 +185,9 @@ Plunker: [Angular2 Simple Timer Example](http://embed.plnkr.co/HaTd8q/)
 	- Change uuid as dependency
 * 1.2.9
 	- Replace uuid with angular2-uuid
+* 1.3.0
+	- Add instruction for `"noImplicitAny": false`
+	- Clean up package
 
 ## License
 
