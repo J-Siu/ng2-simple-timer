@@ -188,12 +188,15 @@ Plunker: [Angular2 Simple Timer Example](http://embed.plnkr.co/HaTd8q/)
 * 1.3.0
 	- Add instruction for `"noImplicitAny": false`
 	- Clean up package
+* 1.3.1
+	- Due to the rapid release cycle of Angular, to minimize update purely due to `peerDependencies`, it is modified as follow:
+		`"peerDependencies": { "@angular/core": ">=2.4.0" }`
 
 ## License
 
 The MIT License
 
-Copyright (c) 2016
+Copyright (c) 2017
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
