@@ -110,7 +110,7 @@ let ids: string[] = this.st.getSubscription();
 
 ##### subscribe
 
-`subscribe(name: string, callback: (any) => void): string`
+`subscribe(name: string, callback: () => void): string`
 
 `subscribe` will link `callback` function to timer `name`. Whenever timer `name` tick, `callback` will be invoked.
 
@@ -190,7 +190,12 @@ Plunker: [Angular2 Simple Timer Example](http://embed.plnkr.co/HaTd8q/)
 	- Clean up package
 * 1.3.1
 	- Due to the rapid release cycle of Angular, to minimize update purely due to `peerDependencies`, it is modified as follow:
-		`"peerDependencies": { "@angular/core": ">=2.4.0" }`
+		-	`"peerDependencies": { "@angular/core": ">=2.4.0" }`
+* 1.3.2
+	- Update package.json for Angular 4.3.1. For Angular 2.x.x, please use 1.3.1 or earlier.
+	- Fix readme example code syntex error.
+	- API change:
+		- `subscribe(name: string, callback: (any) => void): string` change to `subscribe(name: string, callback: () => void): string`
 
 ## License
 
