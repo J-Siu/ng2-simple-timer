@@ -51,7 +51,12 @@ export class SimpleTimer {
 		delete this.timer[name].observable;
 		delete this.timer[name];
 	}
-	subscribe(name: string, callback: (any) => void): string {
+	/**
+	 *
+	 * @param name
+	 * @param callback
+	 */
+	subscribe(name: string, callback: () => void): string {
 		if (!this.timer[name]) {
 			return '';
 		}
@@ -62,6 +67,10 @@ export class SimpleTimer {
 		}
 		return id;
 	}
+	/**
+	 *
+	 * @param id
+	 */
 	unsubscribe(id: string): boolean {
 		if (!id || !this.subscription[id]) {
 			return false;
