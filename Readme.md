@@ -127,7 +127,7 @@ timerId: string;
 
 ngOnInit() {
 	// lazy mode
-	this.timerId = this.st.subscribe('5sec', e => this.callback());
+	this.timerId = this.st.subscribe('5sec', () => this.callback());
 }
 
 callback() {
@@ -196,6 +196,8 @@ Plunker: [Angular2 Simple Timer Example](http://embed.plnkr.co/HaTd8q/)
 	- Fix readme example code syntex error.
 	- API change:
 		- `subscribe(name: string, callback: (any) => void): string` change to `subscribe(name: string, callback: () => void): string`
+* 1.3.3
+	- Fix readme example code for `subscribe`
 
 ## License
 
