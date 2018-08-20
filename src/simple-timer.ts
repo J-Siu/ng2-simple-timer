@@ -28,11 +28,17 @@ export class SimpleTimer {
 	getSubscription(): string[] {
 		return Object.keys(this.subscription);
 	}
-	newTimer(name: string, sec: number): boolean {
+	newTimer(name: string, sec: number, delay: boolean = false): boolean {
 		if (name === undefined || sec === undefined || this.timer[name]) {
 			return false;
 		}
-		let o = Observable.timer(0, sec * 1000);
+		let o
+		if (delay) {
+			o = Observable.timer(0, sec * 1000);
+		}
+		else {
+			o = Observable.timer(sec * 1000, sec * 1000);
+		}
 		this.timer[name] = { second: sec, observable: o };
 		return true;
 	}

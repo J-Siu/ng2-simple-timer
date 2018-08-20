@@ -1,6 +1,6 @@
 # ng2-simple-timer
 
-A simple timer service for Angular 2, base on RxJS.
+A simple timer service for Angular, base on RxJS.
 
 Name/ID(string) base API. RxJS object not exposed.
 
@@ -38,7 +38,7 @@ Must set `"noImplicitAny": false` in application __tsconfig.json__. Else followi
 
 ### Import into Angular2 RC5+ application (typescript)
 
-`ng2-simple-timer` is implemented as Angular 2 injectable service name __SimpleTimer__.
+`ng2-simple-timer` is implemented as Angular injectable service name __SimpleTimer__.
 
 __For module using SimpleTimer__
 
@@ -68,14 +68,17 @@ export class ChildComponent {
 
 ##### newTimer
 
-`newTimer(name: string, sec: number): boolean`
+`newTimer(name: string, sec: number, delay: boolan = false): boolean`
 
 `newTimer` will create timer `name` and tick every 'number' of seconds. Creating timer with the same name multiple times has no side effect.
+
+`delay`: If set to true will delay the 1st tick till the end of the first interval.
 
 Return `false` if timer `name` exist.
 
 ```javascript
 this.st.newTimer('5sec', 5);
+this.st.newTimer('5sec', 5, true);
 ```
 
 ##### delTimer
@@ -198,6 +201,8 @@ Plunker: [Angular2 Simple Timer Example](http://embed.plnkr.co/HaTd8q/)
 		- `subscribe(name: string, callback: (any) => void): string` change to `subscribe(name: string, callback: () => void): string`
 * 1.3.3
 	- Fix readme example code for `subscribe`
+* 1.3.4
+	- Add `delay` option for `newTimer`
 
 ## License
 
