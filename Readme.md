@@ -203,6 +203,8 @@ Plunker: [Angular2 Simple Timer Example](http://embed.plnkr.co/HaTd8q/)
 	- Fix readme example code for `subscribe`
 * 1.3.4
 	- Add `delay` option for `newTimer`
+* 1.3.5
+	- Bugfix for `newTimer`
 
 ## License
 
