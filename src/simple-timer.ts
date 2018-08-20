@@ -34,10 +34,10 @@ export class SimpleTimer {
 		}
 		let o
 		if (delay) {
-			o = Observable.timer(0, sec * 1000);
+			o = Observable.timer(sec * 1000, sec * 1000);
 		}
 		else {
-			o = Observable.timer(sec * 1000, sec * 1000);
+			o = Observable.timer(0, sec * 1000);
 		}
 		this.timer[name] = { second: sec, observable: o };
 		return true;
