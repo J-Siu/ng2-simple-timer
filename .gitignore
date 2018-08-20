@@ -4,3 +4,5 @@ lib
 node_modules
 npm-debug.log
 typings
+package-lock.json
+ng2-simple-timer-*.tgz

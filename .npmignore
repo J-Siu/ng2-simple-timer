@@ -9,3 +9,5 @@ src
 tsconfig.json
 typings
 typings.json
+package-lock.json
+ng2-simple-timer-*.tgz

@@ -1,43 +1,44 @@
 {
-  "name": "ng2-simple-timer",
-  "description": "Angular 2 simple timer service",
-  "version": "1.3.5",
-  "license": "MIT",
-  "author": {
-    "name": "John, Sing Dao, Siu",
-    "url": "https://github.com/J-Siu"
-  },
-  "keywords": [
-    "angular",
-    "ng",
-    "component",
-    "timer",
-    "example",
-    "simple"
-  ],
-  "bugs": {
-    "url": "https://github.com/J-Siu/ng2-simple-timer/issues"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/J-Siu/ng2-simple-timer.git"
-  },
-  "scripts": {
-    "build": "tsc -p src/"
-  },
-  "dependencies": {
-    "angular2-uuid": "*"
-  },
-  "peerDependencies": {
-    "@angular/core": ">=4.3.1"
-  },
-  "devDependencies": {
-    "@angular/core": ">=4.3.1",
-    "rxjs": "^5.1.0",
-    "core-js": "^2.4.1",
-    "zone.js": "^0.8.4",
-    "@types/angular": "^1.5.16",
-    "@types/node": "^6.0.45",
-    "typescript": "~2.3.2"
-  }
+    "author": {
+        "name": "John, Sing Dao, Siu",
+        "url": "https://github.com/J-Siu"
+    },
+    "bugs": {
+        "url": "https://github.com/J-Siu/ng2-simple-timer/issues"
+    },
+    "dependencies": {
+        "angular2-uuid": "*"
+    },
+    "description": "Angular 2 simple timer service",
+    "devDependencies": {
+        "@angular/core": "^6.1.0",
+        "@types/node": "~8.9.4",
+        "@types/rx": "^4.1.1",
+        "core-js": "^2.5.4",
+        "rxjs": "^6.0.0",
+        "typescript": "~2.7.2",
+        "zone.js": "~0.8.26"
+    },
+    "keywords": [
+        "angular",
+        "ng",
+        "component",
+        "timer",
+        "example",
+        "simple"
+    ],
+    "license": "MIT",
+    "name": "ng2-simple-timer",
+    "peerDependencies": {
+        "@angular/common": "^6.0.0-rc.0 || ^6.0.0",
+        "@angular/core": "^6.0.0-rc.0 || ^6.0.0"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/J-Siu/ng2-simple-timer.git"
+    },
+    "scripts": {
+        "build": "tsc -p src/"
+    },
+    "version": "6.0.0"
 }
