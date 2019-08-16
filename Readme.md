@@ -4,6 +4,12 @@ A simple timer service for Angular, base on RxJS.
 
 Name/ID(string) base API. RxJS object not exposed.
 
+> To enable faster update, ng2-simple-timer switched to Angular CLI starting 8.2.0 and use new repository https://github.com/J-Siu/ng2-simple-timer-lib/
+>
+> Project contains both library and example.
+>
+> All version < 8.2.0 are in old repository https://github.com/J-Siu/ng2-simple-timer/
+
 ## Index
 
 - [Install](#install)
