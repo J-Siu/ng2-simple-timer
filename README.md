@@ -1,4 +1,4 @@
-# ng2-simple-timer
+# Angular Simple Timer [![Paypal donate](https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif)](https://www.paypal.com/donate/?business=HZF49NM9D35SJ&no_recurring=0&currency_code=CAD)
 
 A simple timer service for Angular, base on RxJS.
 
@@ -10,45 +10,49 @@ Name/ID(string) base API. RxJS object not exposed.
 >
 > All version < 8.2.0 are in old repository https://github.com/J-Siu/ng2-simple-timer/
 
-## Index
+### Table Of Content
+<!-- TOC -->
 
+- [Version](#version)
 - [Install](#install)
 - [Usage](#usage)
-	- ["noImplicitAny": false](#noimplicitany-false)
-	- [Import into Angular 2 RC5 application (typescript)](#import-into-angular-2-rc5-application-typescript)
-	- [API](#api)
-		- [newTimer](#newtimername-string-sec-number-boolean)
-		- [delTimer](#deltimername-string-boolean)
-		- [getTimer](#gettimer-string)
-		- [getSubscription](#getsubscription-string)
-		- [subscribe](#subscribename-string-callback-any-void-string)
-		- [unsubscribe](#unsubscribeid-string-boolean)
+  - ["noImplicitAny": false](#noimplicitany-false)
+  - [Import into Angular2 RC5+ application typescript](#import-into-angular2-rc5-application-typescript)
+  - [API](#api)
+      - [newTimer](#newtimer)
+      - [delTimer](#deltimer)
+      - [getTimer](#gettimer)
+      - [getSubscription](#getsubscription)
+      - [subscribe](#subscribe)
+      - [unsubscribe](#unsubscribe)
 - [Example](#example)
 - [Contributors](#contributors)
 - [Changelog](#changelog)
 - [License](#license)
 
-## Version
+<!-- /TOC -->
+
+### Version
 
 - For Angular 2.x.x, please use 1.3.1.
 - For Angular 4.x.x, please use 1.3.5.
 - For Angular 6.x.x, please use 6.0.0.
 
-## Install
+### Install
 
 ```
 npm install ng2-simple-timer
 ```
 
-## Usage
+### Usage
 
-### "noImplicitAny": false
+#### "noImplicitAny": false
 
-Must set `"noImplicitAny": false` in application __tsconfig.json__. Else following error may occure at build time:
+Must set `"noImplicitAny": false` in application __tsconfig.json__. Else following error may occur at build time:
 
     error TS7006: Parameter 'any' implicitly has an 'any' type
 
-### Import into Angular2 RC5+ application (typescript)
+#### Import into Angular2 RC5+ application (typescript)
 
 `ng2-simple-timer` is implemented as Angular injectable service name __SimpleTimer__.
 
@@ -76,11 +80,11 @@ export class ChildComponent {
 }
 ```
 
-### API
+#### API
 
-##### newTimer
+###### newTimer
 
-`newTimer(name: string, sec: number, delay: boolan = false): boolean`
+`newTimer(name: string, sec: number, delay: boolean = false): boolean`
 
 `newTimer` will create timer `name` and tick every 'number' of seconds. Creating timer with the same name multiple times has no side effect.
 
@@ -93,7 +97,7 @@ this.st.newTimer('5sec', 5);
 this.st.newTimer('5sec', 5, true);
 ```
 
-##### delTimer
+###### delTimer
 
 `delTimer(name: string): boolean`
 
@@ -105,7 +109,7 @@ Return `false` if timer `name` does not exist.
 this.st.delTimer('5sec');
 ```
 
-##### getTimer
+###### getTimer
 
 `getTimer(): string[]`
 
@@ -114,7 +118,7 @@ this.st.delTimer('5sec');
 let t: string[] = this.st.getTimer();
 ```
 
-##### getSubscription
+###### getSubscription
 
 `getSubscription(): string[]`
 
@@ -123,7 +127,7 @@ let t: string[] = this.st.getTimer();
 let ids: string[] = this.st.getSubscription();
 ```
 
-##### subscribe
+###### subscribe
 
 `subscribe(name: string, callback: () => void): string`
 
@@ -150,7 +154,7 @@ callback() {
 }
 ```
 
-##### unsubscribe
+###### unsubscribe
 
 `unsubscribe(id: string): boolean`
 
@@ -164,17 +168,17 @@ timerId: string;
 this.st.unsubscribe(this.timerId);
 ```
 
-## Example
+### Example
 
 GitHub: [ng2-simple-timer-example](https://github.com/J-Siu/ng2-simple-timer-example)
 Plunker: [Angular2 Simple Timer Example](http://embed.plnkr.co/HaTd8q/)
 
-## Contributors
+### Contributors
 
 * [John Sing Dao Siu](https://github.com/J-Siu)
 
 
-## Changelog
+### Changelog
 
 * 0.2.0
 	- Angular 2 RC4
@@ -208,7 +212,7 @@ Plunker: [Angular2 Simple Timer Example](http://embed.plnkr.co/HaTd8q/)
 		-	`"peerDependencies": { "@angular/core": ">=2.4.0" }`
 * 1.3.2
 	- Update package.json for Angular 4.3.1. For Angular 2.x.x, please use 1.3.1 or earlier.
-	- Fix readme example code syntex error.
+	- Fix readme example code syntax error.
 	- API change:
 		- `subscribe(name: string, callback: (any) => void): string` change to `subscribe(name: string, callback: () => void): string`
 * 1.3.3
@@ -221,7 +225,7 @@ Plunker: [Angular2 Simple Timer Example](http://embed.plnkr.co/HaTd8q/)
 	- Update for Angular 6.x, which include moving from RxJS 5.1 to 6.0
 	- Update version to match major version of Angular
 
-## License
+### License
 
 The MIT License
 
